@@ -1,6 +1,6 @@
 //lucas119제작
 //사용전 Visual Studio나 코드블록같은 C컴파일러를 설치해주시기 바랍니다.
-//현재 버전 0.1입니다
+//현재 버전 0.2입니다
 
 //헤더파일
 #include <stdio.h>
@@ -34,6 +34,9 @@ main()
   int deleteindex;
   int deleteindexend;
   int finaldeleteindex;
+  int returnstr;
+  int returnend;
+  int finalreturnstr;
   
   while (1)
   {
@@ -154,7 +157,7 @@ main()
   }
   else if ((answer[0]=='d')&&(answer[1]=='e')&&(answer[2]=='l')&&(answer[3]=='e')&&(answer[4]=='t')&&(answer[5]=='e')&&(answer[6]=='('))//배열값삭제
   {
-    deleteindex=strlen(answer)-8;
+    deleteindex=7;
     for (i=7;;i++)
     {
       if (answer[i]==')')
@@ -178,7 +181,9 @@ main()
           finaldeleteindex=strcat((char)finaldeleteindex, (char)deleteindex);
         }
         finaldeleteindex=(int)finaldeleteindex;
+        break;
       }
+      
     }
     for (i=finaldeleteindex; i<sizeof(array)/sizeof()array[0]; i++)
     {
@@ -194,6 +199,51 @@ main()
     {
       printf("\nArray[%d]=%s", i, (char *)array[i]);
     }
+  }
+  else if ((answer[0]=='v')&&(answer[1]=='a')&&(answer[2]=='l')&&(answer[3]=='u')&&(answer[4]=='e')&&(answer[5]=='('))//배열값리턴
+  {
+     returnstr=6;
+     returnend=strlen(answer)-1
+     for (i=0;; i++)
+     {
+      
+        if (isdigit(answer[i]))
+        {
+          if (i==6)
+          {finalreturnstr=(char)answer[i];}
+          else
+          {finalreturnstr=strcat((char)finalreturnstr, (char)answer[i]);}
+        }
+       if (i==strlen(answer))
+       {finalreturnstr=(int)finalreturnstr;}
+        
+          
+     }
+     printf("%s", (char *)array[finalreturnstr]);
+  }
+  else if ((answer[0]=='l')&&(answer[1]=='e')&&(answer[2]=='n')&&(answer[3]=='g')&&(answer[4]=='t')&&(answer[5]=='h')&&(answer[6]=='('))//배열길이
+  {
+    if (type=="char")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(char);
+    }
+    else if (type=="int")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(int);
+    }
+    else if (type=="float")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(float);
+    }
+    else if (type=="double")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(double);
+    }
+    printf("\n배열의 길이:%d", arraylen);
   }
   }
 }
