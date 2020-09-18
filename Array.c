@@ -32,7 +32,7 @@ main()
     {
       char *p;
       p=answer;
-      printf("배열 자료형(int, char, float, double) >");
+      printf("\n배열 자료형(int, char, float, double) >");
       char type[10];
       gets(type);
       if (type=="int")
@@ -51,23 +51,14 @@ main()
       {
         double array[100];
       }
-      int space;
-      int arraycomma;
-      int endspace;
-      for (i=0; i==strlen(answer); i++)
+      int i;
+      for (i=0;; i++)
       {
-        if (answer[i]==' ');
-        {space=i;}
-        if ((answer[i]==' ')&&(i!=space))
-        {endspace=i;break;}
+        printf("\nArray[%d](NULL 또는 \\0입력시 종료) >", i);
+        gets(array[i])
+        if ((array[i]==NULL)||(array[i]=='\0'))
+        {}
       }
-       for (i=0; i==endspace-space; i++)
-       {
-        if (i==0)
-        {arraycomma=answer[space];]
-        else
-        {strcat(arraycomma)}
-       }
       
     }
   }
