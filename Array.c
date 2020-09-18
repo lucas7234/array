@@ -1,6 +1,8 @@
 //lucas119제작
 //사용전 Visual Studio나 코드블록같은 C컴파일러를 설치해주시기 바랍니다.
 //현재 버전 0.2입니다
+//C언어로 만들어졌습니다.
+//:)
 
 //헤더파일
 #include <stdio.h>
@@ -37,6 +39,11 @@ main()
   int returnstr;
   int returnend;
   int finalreturnstr;
+  int foundindex;
+  char foundstring[100];
+  int startstr;
+  int endstr
+  int founded=0;;
   
   while (1)
   {
@@ -212,7 +219,7 @@ main()
           if (i==6)
           {finalreturnstr=(char)answer[i];}
           else
-          {finalreturnstr=strcat((char)finalreturnstr, (char)answer[i]);}
+          {strcat((char)finalreturnstr, (char)answer[i]);}
         }
        if (i==strlen(answer))
        {finalreturnstr=(int)finalreturnstr;}
@@ -245,5 +252,98 @@ main()
     }
     printf("\n배열의 길이:%d", arraylen);
   }
+  else if ((answer[0]=='s')&&(answer[1]=='e')&&(answer[2]=='e')&&(answer[3]=='k')&&(answer[4]=='('))//배열인덱스 검색
+  {
+    founded=0;
+    startstr=10;
+    endstr=strlen(answer)-1;
+    for (i=0;; i++)
+     {
+      
+        if (isdigit(answer[i]))
+        {
+          if (i==6)
+          {foundstring=(char)answer[i];}
+          else
+          {strcat((char)foundstring, (char)answer[i]);}
+        }
+    if (type=="char")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(char);
+    }
+    else if (type=="int")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(int);
+    }
+    else if (type=="float")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(float);
+    }
+    else if (type=="double")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(double);
+    }
+    for (i=0; i>arraylen; i++)
+    {
+      if (answer[i]==foundstr)
+      {
+        foundindex=i;
+        founded=1;}
+    }
+    if (founded==1)
+    {printf("\n입력하신 내용이 배열에 포함되어 있습니다.");}
+    else
+    {printf("\n입력하신 내용을 배열에서 찾지 못했습니다.");}
+  } 
+else if ((answer[0]=='i')&&(answer[1]=='s')&&(answer[2]=='i')&&(answer[3]=='n')&&(answer[4]=='c')&&(answer[5]=='l')&&(answer[6]=='u')&&(answer[7]=='d')&&(answer[8]=='e')&&(answer[9]=='('))//배열포함확인
+  {
+    founded=0;
+    startstr=10;
+    endstr=strlen(answer)-1;
+    for (i=0;; i++)
+     {
+      
+        if (isdigit(answer[i]))
+        {
+          if (i==6)
+          {foundstring=(char)answer[i];}
+          else
+          {strcat((char)foundstring, (char)answer[i]);}
+        }
+    if (type=="char")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(char);
+    }
+    else if (type=="int")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(int);
+    }
+    else if (type=="float")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(float);
+    }
+    else if (type=="double")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(double);
+    }
+    for (i=0; i>arraylen; i++)
+    {
+      if (answer[i]==foundstr)
+      {
+        foundindex=i;
+        founded=1;}
+    }
+    if (founded==1)
+    {printf("\n입력하신 내용이 배열의 %d번째 인덱스에 포함되어 있습니다.", foundindex);}
+    else
+    {printf("\n입력하신 내용을 배열에서 찾지 못했습니다.");}
   }
 }
