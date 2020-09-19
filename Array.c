@@ -43,7 +43,9 @@ main()
   char foundstring[100];
   int startstr;
   int endstr
-  int founded=0;;
+  int founded=0;
+  FILE *fptr;
+  char directory[500];
   
   while (1)
   {
@@ -54,7 +56,7 @@ main()
     {
       puts("명령어 설명\nhelp()-명령어 도움말\ndefine()-배열 정의\nadd(값)-배열의 마지막에 값 추가\nchange(인덱스, 값)")
       puts("배열의 인덱스번째 값을 값으로 바꾸기\ndelete(인덱스)-인덱스번째 값 삭제하기\nreturn()배열 리턴하기\nvalue(인덱스)-인덱스번째 값 출력하기, length()-배열의 길이, isinclude(문자)-배열에 문자가 포함되어 있는가?()참이면 1, 거짓이면 0 출력");
-      puts("\nseek(문자)-문자가 배열의 몇번째 인덱스에 있는지 출력(없을경우 false출력), ");
+      puts("\nseek(문자)-문자가 배열의 몇번째 인덱스에 있는지 출력(없을경우 false출력), \n save()-배열 값을 바탕화면에 저장한다.");
     }
     else if ((answer[0]=='a')&&(answer[1]=='d')&&(answer[2]=='d')&&(answer[3]=='('))//값 추가
     {
@@ -299,7 +301,7 @@ main()
     else
     {printf("\n입력하신 내용을 배열에서 찾지 못했습니다.");}
   } 
-else if ((answer[0]=='i')&&(answer[1]=='s')&&(answer[2]=='i')&&(answer[3]=='n')&&(answer[4]=='c')&&(answer[5]=='l')&&(answer[6]=='u')&&(answer[7]=='d')&&(answer[8]=='e')&&(answer[9]=='('))//배열포함확인
+  if ((answer[0]=='i')&&(answer[1]=='s')&&(answer[2]=='i')&&(answer[3]=='n')&&(answer[4]=='c')&&(answer[5]=='l')&&(answer[6]=='u')&&(answer[7]=='d')&&(answer[8]=='e')&&(answer[9]=='('))//배열포함확인
   {
     founded=0;
     startstr=10;
@@ -314,7 +316,7 @@ else if ((answer[0]=='i')&&(answer[1]=='s')&&(answer[2]=='i')&&(answer[3]=='n')&
           else
           {strcat((char)foundstring, (char)answer[i]);}
         }
-    if (type=="char")
+     (type=="char")
     {
       strcat(array[arraylen], answer[i])}
       arraylen=sizeof(numArr) / sizeof(char);
@@ -344,6 +346,37 @@ else if ((answer[0]=='i')&&(answer[1]=='s')&&(answer[2]=='i')&&(answer[3]=='n')&
     if (founded==1)
     {printf("\n입력하신 내용이 배열의 %d번째 인덱스에 포함되어 있습니다.", foundindex);}
     else
-    {printf("\n입력하신 내용을 배열에서 찾지 못했습니다.");}
+    {printf("\n입력하신 내용을 배열에서 찾지 못했습니다.");}}
+ else if ((answer[0]=='s')&&(answer[1]=='a')&&(answer[2]=='v')&&(answer[3]=='e')&&(answer[4]=='('))//배열저장
+  {
+   printf("\n디렉토리 (\\는 \\\\로 입력) >");  
+   gets (directory);
+   fptr=fopen(directory);
+    (type=="char")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(char);
+    }
+    else if (type=="int")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(int);
+    }
+    else if (type=="float")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(float);
+    }
+    else if (type=="double")
+    {
+      strcat(array[arraylen], answer[i])}
+      arraylen=sizeof(numArr) / sizeof(double);
+    }
+    
+   
+   for (i=0; i>arraylen; i++){fprintf ("\n%s",(char)array[i] );}
+   fclose (fptr);
+   printf ("성공적으로 저장하였습니다");
+ }
   }
 }
