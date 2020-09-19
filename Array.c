@@ -1,6 +1,6 @@
 //lucas119제작
 //사용전 Visual Studio나 코드블록같은 C컴파일러를 설치해주시기 바랍니다.
-//현재 버전 0.2입니다
+//현재 버전 1.1입니다
 //C언어로 만들어졌습니다.
 //:)
 
@@ -21,7 +21,7 @@ main()
 {
   
   //시작
-  printf("ARRAAY v0.1\nlucas119 제작.\n");
+  printf("ARRAAY v1.1\nlucas119 제작.\n");
   
   //변수
   char answer[100];
@@ -56,7 +56,7 @@ main()
     {
       puts("명령어 설명\nhelp()-명령어 도움말\ndefine()-배열 정의\nadd(값)-배열의 마지막에 값 추가\nchange(인덱스, 값)")
       puts("배열의 인덱스번째 값을 값으로 바꾸기\ndelete(인덱스)-인덱스번째 값 삭제하기\nreturn()배열 리턴하기\nvalue(인덱스)-인덱스번째 값 출력하기, length()-배열의 길이, isinclude(문자)-배열에 문자가 포함되어 있는가?()참이면 1, 거짓이면 0 출력");
-      puts("\nseek(문자)-문자가 배열의 몇번째 인덱스에 있는지 출력(없을경우 false출력), \n save()-배열 값을 바탕화면에 저장한다.");
+      puts("\nseek(문자)-문자가 배열의 몇번째 인덱스에 있는지 출력(없을경우 false출력), \n save()-배열 값을 바탕화면에 저장한다.\vardef()-변수 정의\nvarrtn()-변수 값 리턴");
     }
     else if ((answer[0]=='a')&&(answer[1]=='d')&&(answer[2]=='d')&&(answer[3]=='('))//값 추가
     {
@@ -378,5 +378,45 @@ main()
    fclose (fptr);
    printf ("성공적으로 저장하였습니다");
  }
+else if ((answer[0]=='v')&&(answer[1]=='a')&&(answer[2]=='r')&&(answer[3]=='d')&&(answer[4]=='e')&&(answer[5]=='f')&&(answer[6]=='(')){
+printf("\n배열 자료형(int, char, float, double) >");
+      gets(type);
+      if (type=="int")
+      int var;
+      }
+      else if (type=="char")
+      {
+        char var;
+      }
+      else if (type=="float")
+      {
+        float var;
+      }
+      else if (type=="double")
+      {
+        double var;
+      }
+      puts("\n기본값 지정 >");
+      char[100] basic;
+      gets(basic);
+      if (type=="int")
+      var=(int)basic
+      }
+      else if (type=="char")
+      {
+        var=(char)basic;
+      }
+      else if (type=="float")
+      {
+        var=(float)basic;
+      }
+      else if (type=="double")
+      {
+        var=(double)basic;
+      }
+      
+      printf("\n변수 정의가 완료되었습니다.\n");}
   }
+else if ((answer[0]=='v')&&(answer[1]=='a')&&(answer[2]=='r')&&(answer[3]=='r')&&(answer[4]=='t')&&(answer[5]=='n')&&(answer[6]=='(')){
+printf("%c", (char)var);}
 }
